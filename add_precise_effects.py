@@ -340,5 +340,184 @@ precise_effects: dict = {
         "Changes ATK value of equipped",
         "Changes Attribute",
     ],
-    
+    # add rest from notes here
 }
+"""
+(allow_activations)
+    Allows activation of Quick-Play Spell Cards the turn they were Set
+    Allows activation of Spell Cards from the player's hand during the opponent's turn
+    Allows activation of Trap Cards from your hand
+    Allows activation of Trap Cards the turn they were Set
+    
+    (allow_face_up_in_deck)
+    Allows face-up cards in Main Deck
+
+    (allow_multiple_summons)
+    Allows multiple Normal Summons
+    Allows multiple Pendulum Summons
+    Allows multiple Tribute Summons
+
+    (alter_summon_condition)
+    Alters Summoning conditions
+
+
+    (apply_effect_when)
+    Applies effect when Tributed for Tribute Summon
+    Applies effect when used as Fusion Material
+    Applies effect when used as Link Material
+    Applies effect when used as Synchro Material
+    Applies effect when used as Xyz Material
+    Applies effect when used for a Ritual Summon
+
+    (apply_effect_if)
+    Applies effect if other Pendulum Zone is not occupied by specific card
+    Applies effect if other Pendulum Zone is unoccupied
+    Applies effects if Link Summoned using specific Link Material
+    Applies effects if specific Xyz Material is attached
+    Applies effects if Xyz Material is attached
+    Applies effects if Xyz Summoned using specific Xyz Material
+
+    (attach_xyz_material)
+    Attaches as Xyz Material
+    Attaches from your Deck as Xyz Material
+    Attaches from your Extra Deck as Xyz Material
+    Attaches from your field as Xyz Material
+    Attaches from your Graveyard as Xyz Material
+    Attaches from your hand as Xyz Material
+    Attaches from your opponent's Extra Deck as Xyz Material
+    Attaches from your opponent's field as Xyz Material
+    Attaches from your opponent's Graveyard as Xyz Material
+    Attaches itself as Xyz Material
+    Attaches itself from your field as Xyz Material
+    Attaches itself from your Graveyard as Xyz Material
+    Attaches itself from your hand as Xyz Material
+    Attaches itself from your Pendulum Zone as Xyz Material
+    Attaches your opponent's banished cards as Xyz Material
+
+    (battle_related)
+    Applies DEF for damage calculation
+    Allows direct attacks
+    Allows multiple attacks
+    Allows multiple attacks on monsters
+    Banishes battling monster after damage calculation
+    Banishes battling monster at the end of the Damage Step
+    Banishes battling monster at the start of the Damage Step
+    Battle damage treated as effect damage
+    Can make multiple attacks on monsters
+    
+    
+    (banish_shifts_location)
+    Banishes cards that would be returned to the Deck
+    Banishes cards that would be returned to the hand
+    Banishes cards that would be sent to the Graveyard
+    Banishes cards when it leaves the field
+    Banishes itself when it leaves the field
+    Banishes itself while as an Xyz Material
+    
+    (banish)
+    Banishes equipped
+    Banishes excavated cards
+    Banishes face-down
+    Banishes from Deck
+    Banishes from Extra Deck
+    Banishes from field
+    Banishes from field for Summon
+    Banishes from Graveyard
+    Banishes from Graveyard for Summon
+    Banishes from hand
+    Banishes from hand for Summon
+    Banishes from the top of your Deck
+    Banishes from the top of your opponent's Deck
+    Banishes from your Deck
+    Banishes from your Extra Deck
+    Banishes from your field
+    Banishes from your Graveyard
+    Banishes from your hand
+    Banishes from your opponent's Deck
+    Banishes from your opponent's Extra Deck
+    Banishes from your opponent's field
+    Banishes from your opponent's Graveyard
+    Banishes from your opponent's hand
+    Banishes itself from field
+    Banishes itself from Deck
+    Banishes itself from Graveyard
+    Banishes itself from hand
+    Banishes itself from Pendulum Zone
+    Banishes Xyz Materials
+
+    (banish_fusion_materials)
+    Banishes Fusion Materials for Contact Fusion
+    Banishes Fusion Materials used in a Fusion Summon
+
+    (banish_for_cost)
+    Banishes for cost
+    Banishes from Deck for cost
+    Banishes from field for cost
+    Banishes from Graveyard for cost
+    Banishes from hand for cost
+    Banishes itself from field for cost
+    Banishes itself from Graveyard for cost
+    Banishes itself from hand for cost
+
+    (banish_for_ritual_summon)
+    Banishes monsters from Graveyard for Ritual Summon
+
+    (banish_negated)
+    Banishes negated activations
+    Banishes negated Summons
+
+    (external_special_summon)
+    Can always be Special Summoned
+
+    (activated_by_either_player)
+    Can be activated by either player
+    
+    (quick_effect)
+    Can be activated during either player's turn
+
+    (external_revive)
+    Can be Special Summoned
+
+    (alternative_fusion_summon_possible)
+    Can be Special Summoned either by Fusion Summon or Contact Fusion
+
+    (easier_ritual_summon)
+    Can be used as entire Ritual Summon requirement
+
+    (restriction_type)
+    Cannot attack
+    Cannot attack directly
+    Cannot attack the turn it is Summoned
+    Cannot be activated
+    Cannot be banished
+    Cannot be destroyed by battle
+    Cannot be destroyed by card effects
+    Cannot be Flip Summoned
+    Cannot be Fusion Summoned
+    Cannot be Link Summoned
+    Cannot be Normal Set
+    Cannot be Normal Summoned
+    Cannot be Pendulum Summoned
+    Cannot be Special Summoned
+    Cannot be Special Summoned except by a specific method
+    Cannot be Special Summoned from the Deck
+    Cannot be Special Summoned from the Extra Deck
+    Cannot be Special Summoned from the Graveyard
+    Cannot be Special Summoned from the hand
+    Cannot be Special Summoned while banished
+    Cannot be Synchro Summoned
+    Cannot be targeted by card effects
+    Cannot be Tributed
+    Cannot be Tributed for a Tribute Summon
+    Cannot be used as a Fusion Material
+    Cannot be used as a Link Material
+    Cannot be used as a Synchro Material
+    Cannot be used as an Xyz Material
+    Cannot be Xyz Summoned
+    Cannot change control
+    Cannot conduct Battle Phase
+    Cannot destroy by battle
+
+    (chain_effect)
+    Chain Effects
+"""
