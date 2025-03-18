@@ -1,0 +1,98 @@
+//inherit from multiple classes should work
+
+TableGroup yugioh {
+    cards Table
+    monster_cards Table
+    trap_cards Table
+    spell_cards Table
+}
+
+Table cards [headercolor: #873200]{ //will 
+    card_id integer [primary key]
+    card_name varchar  //will be passed to all card types 
+    archetype list(text)  //cards can have more than one archetype
+    card_type card_type
+    description_id integer //foreign key from card_description
+}
+
+Table card_description [headercolor: #000]{ //abstract table
+    description_id integer [primary key]
+    description text       //can be flavour text or whole effect written in modern PSCT (Problem solving card text)
+    effects list(enum)     //return, modify atk/def, generic effects
+    precise_effect list(enum)   // more precise details from the generic effect (field above)
+}
+
+Table monster_cards [headercolor: #FF8B53] {
+    id integer [primary key]
+    card_id integer
+    card_name text
+    archetype list(text)
+    card_type card_type
+    attribute enum
+    monster_type enum
+    level_rank integer     //can be null, when it is a link monster 
+    pendulum_scale integer //can be null, when not a pendulum monster or is link
+    link_rating integer    //can be null, when not a link monster
+    attack smallinteger      //can be null, if it isnt a monster
+    defense smallinteger     //can be null, if it isnt a monster
+    description_id integer
+}
+
+Table spell_cards [headercolor: #1D9E74] {
+    id integer [primary key]
+    card_id integer
+    card_name text
+    archetype list(text)
+    card_type card_type
+    type spell_trap_types
+    description_id integer
+}
+
+Table trap_cards [headercolor: #BC5A84] {
+    id integer [primary key]
+    card_id integer
+    card_name text
+    archetype list(text)
+    card_type card_type
+    type spell_trap_types
+    description_id integer
+}
+
+Ref: card_description.description_id - cards.description_id
+
+Ref: monster_cards.card_id < cards.card_id
+Ref: monster_cards.description_id - cards.description_id
+Ref: monster_cards.card_name - cards.card_name
+Ref: monster_cards.archetype - cards.archetype
+Ref: monster_cards.card_type - cards.card_type
+
+
+Ref: spell_cards.card_id < cards.card_id
+Ref: spell_cards.description_id - cards.description_id
+Ref: spell_cards.card_name - cards.card_name
+Ref: spell_cards.archetype - cards.archetype
+Ref: spell_cards.card_type - cards.card_type
+
+
+Ref: trap_cards.card_id < cards.card_id
+Ref: trap_cards.description_id - cards.description_id
+Ref: trap_cards.card_name - cards.card_name
+Ref: trap_cards.archetype - cards.archetype
+Ref: trap_cards.card_type - cards.card_type
+
+enum card_type { //this will be an enum
+    Monster
+    Spell
+    Trap
+}
+
+enum spell_trap_types { //this will be an enum
+    Normal // this can be both
+    Equip   //Spell only
+    Field   //Spell only
+    QuickPlay  //Spell only
+    Ritual  //Spell only
+    Continuous  // this can be both
+    Counter //trap only
+}
+
