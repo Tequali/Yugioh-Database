@@ -206,8 +206,6 @@ class TrapCardTypeOptions(Options):
 
 
 class EffectTypeOptions(Options):
-    normal = "NORMAL"
-    activation_area = "ACTIVATION AREA"
     activation_condition = "ACTIVATION CONDITION"
     activation_upon = "ACTIVATION UPON"
     activation_when = "ACTIVATION WHEN"
@@ -233,12 +231,12 @@ class EffectTypeOptions(Options):
     easier_ritual_summon = "EASIER RITUAL SUMMON"
     restriction_type = "RESTRICTION TYPE"
     chain_effect = "CHAIN EFFECT"
+    normal = "NORMAL"
+
 
     @classmethod
     def options(cls):
         return [
-            (cls.normal, "NORMAL"),
-            (cls.activation_area, "ACTIVATION AREA"),
             (cls.activation_condition, "ACTIVATION CONDITION"),
             (cls.activation_upon, "ACTIVATION UPON"),
             (cls.activation_when, "ACTIVATION WHEN"),
@@ -267,6 +265,7 @@ class EffectTypeOptions(Options):
             (cls.easier_ritual_summon, "EASIER RITUAL SUMMON"),
             (cls.restriction_type, "RESTRICTION TYPE"),
             (cls.chain_effect, "CHAIN EFFECT"),
+            (cls.normal, "NORMAL"),
         ]
 
     @classmethod

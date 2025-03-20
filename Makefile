@@ -27,3 +27,6 @@ dev-sqlmigrate:
 
 dev-shell:
 	python manage.py shell --settings=config.settings.dev
+
+dev-test:
+	python manage.py test $(route) --settings=config.settings.dev
