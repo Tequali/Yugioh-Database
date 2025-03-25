@@ -213,6 +213,8 @@ class EffectTypeOptions(Options):
     add_card = "ADD CARD"
     monster_stat_modifiers = "MONSTER STAT MODIFIERS"
     allow_activations = "ALLOW ACTIVATIONS"
+    allow_face_up_in_deck = "ALLOW FACE UP IN DECK"
+    allow_multiple_summons = "ALLOW MULTIPLE SUMMONS"
     alter_summon_condition = "ALTER SUMMON CONDITION"
     apply_effect_when = "APPLY EFFECT WHEN"
     apply_effect_if = "APPLY EFFECT IF"
@@ -222,6 +224,7 @@ class EffectTypeOptions(Options):
     banish_fusion_materials = "BANISH FUSION MATERIALS"
     banish_for_cost = "BANISH FOR COST"
     banish_for_ritual_summon = "BANISH FOR RITUAL SUMMON"
+    banish_negated = "BANISH NEGATED"
     battle_related = "BATTLE RELATED"
     external_special_summon = "EXTERNAL SPECIAL SUMMON"
     activated_by_either_player = "ACTIVATED BY EITHER PLAYER"
@@ -233,7 +236,6 @@ class EffectTypeOptions(Options):
     chain_effect = "CHAIN EFFECT"
     normal = "NORMAL"
 
-
     @classmethod
     def options(cls):
         return [
@@ -244,6 +246,8 @@ class EffectTypeOptions(Options):
             (cls.add_card, "ADD CARD"),
             (cls.monster_stat_modifiers, "MONSTER STAT MODIFIERS"),
             (cls.allow_activations, "ALLOW ACTIVATIONS"),
+            (cls.allow_face_up_in_deck, "ALLOW FACE UP IN DECK"),
+            (cls.allow_multiple_summons, "ALLOW MULTIPLE SUMMONS"),
             (cls.alter_summon_condition, "ALTER SUMMON CONDITION"),
             (cls.apply_effect_when, "APPLY EFFECT WHEN"),
             (cls.apply_effect_if, "APPLY EFFECT IF"),
@@ -253,6 +257,7 @@ class EffectTypeOptions(Options):
             (cls.banish_fusion_materials, "BANISH FUSION MATERIALS"),
             (cls.banish_for_cost, "BANISH FOR COST"),
             (cls.banish_for_ritual_summon, "BANISH FOR RITUAL SUMMON"),
+            (cls.banish_negated, "BANISH NEGATED"),
             (cls.battle_related, "BATTLE RELATED"),
             (cls.external_special_summon, "EXTERNAL SPECIAL SUMMON"),
             (cls.activated_by_either_player, "ACTIVATED BY EITHER PLAYER"),

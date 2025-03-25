@@ -1,2 +1,0 @@
-finish adding all precise effects
-test if it create the entries then actually add it to the database

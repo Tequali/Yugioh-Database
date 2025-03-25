@@ -36,6 +36,13 @@ class Effect(models.Model):
         default=EffectTypeOptions.default(),
     )
 
+    @classmethod
+    def default(cls):
+        effect, created = cls.objects.get_or_create(
+            effect_type=EffectTypeOptions.default()
+        )
+        return effect.pk
+
     def __str__(self):
         return self.effect_type
 
@@ -46,7 +53,12 @@ class Effect(models.Model):
 
 class Precise_Effect(models.Model):
     # this will serve like an enum
-    effect_category = models.ManyToManyField(Effect, related_name="Precise_Effect")
+    effect_category = models.ForeignKey(
+        Effect,
+        related_name="Precise_Effect",
+        on_delete=models.CASCADE,
+        default=Effect.default(),
+    )
     effect_type = models.CharField(max_length=100)
 
     def __str__(self):
