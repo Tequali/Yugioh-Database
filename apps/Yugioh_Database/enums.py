@@ -118,46 +118,6 @@ class MonsterTypeOptions(Options):
         return cls.aqua
 
 
-class MonsterCardTypeOptions(Options):
-    normal = "NORMAL"
-    effect = "EFFECT"
-    ritual = "RITUAL"
-    fusion = "FUSION"
-    synchro = "SYNCHRO"
-    xyz = "XYZ"
-    toon = "TOON"
-    spirit = "SPIRIT"
-    union = "UNION"
-    gemini = "GEMINI"
-    tuner = "TUNER"
-    flip = "FLIP"
-    pendulum = "PENDULUM"
-    link = "LINK"
-
-    @classmethod
-    def options(cls):
-        return [
-            (cls.normal, "NORMAL"),
-            (cls.effect, "EFFECT"),
-            (cls.ritual, "RITUAL"),
-            (cls.fusion, "FUSION"),
-            (cls.synchro, "SYNCHRO"),
-            (cls.xyz, "XYZ"),
-            (cls.toon, "TOON"),
-            (cls.spirit, "SPIRIT"),
-            (cls.union, "UNION"),
-            (cls.gemini, "GEMINI"),
-            (cls.tuner, "TUNER"),
-            (cls.flip, "FLIP"),
-            (cls.pendulum, "PENDULUM"),
-            (cls.link, "LINK"),
-        ]
-
-    @classmethod
-    def default(cls):
-        return cls.normal
-
-
 class SpellCardTypeOptions(Options):
     quick_play = "QUICK_PLAY"
     field = "FIELD"

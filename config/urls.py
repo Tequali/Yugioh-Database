@@ -16,8 +16,10 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from apps.Yugioh_Database import views
 
 urlpatterns = [
     path("admin/", admin.site.urls, name="admin"),
+    path("home/", views.HomeView.as_view(), name="home"),
 ]

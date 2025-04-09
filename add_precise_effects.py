@@ -526,100 +526,100 @@ def loop_entries(key):
         print("The effect has been created:", model)
 
 
-def main():
-    import_success = False
-    list_of_effects = models.Effect.objects.all().values()
-    print(list_of_effects)
-    for key in precise_effects:
-        print("Current key value:", key)
-        if key == "ACTIVATION CONDITION":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ACTIVATION UPON":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ACTIVATION WHEN":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ACTIVATION OTHERS":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ADD CARD":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "MONSTER STAT MODIFIERS":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ALLOW ACTIVATIONS":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ALLOW FACE UP IN DECK":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ALLOW MULTIPLE SUMMONS":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ALTER SUMMON CONDITION":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "APPLY EFFECT WHEN":
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "APPLY EFFECT IF":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ATTACH XYZ MATERIAL":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "BATTLE RELATED":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "BANISH SHIFTS LOCATION":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "BANISH":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "BANISH FUSION MATERIALS":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "BANISH FOR COST":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "BANISH FOR RITUAL SUMMON":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "BANISH NEGATED":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "EXTERNAL SPECIAL SUMMON":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ACTIVATED BY EITHER PLAYER":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "QUICK EFFECT":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "EXTERNAL REVIVE":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "ALTERNATIVE FUSION SUMMON POSSIBLE":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "EASIER RITUAL SUMMON":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "RESTRICTION TYPE":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "CHAIN EFFECT":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        elif key == "NORMAL":  #
-            loop_entries(key)
-            print(f"{key} is done, going onto the next step")
-        else:
-            print(f"the key: {key} did not fit into any of the categories")
-    import_success = True
-    return import_success
+# def main():
+#     import_success = False
+#     list_of_effects = models.Effect.objects.all().values()
+#     print(list_of_effects)
+#     for key in precise_effects:
+#         print("Current key value:", key)
+#         if key == "ACTIVATION CONDITION":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ACTIVATION UPON":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ACTIVATION WHEN":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ACTIVATION OTHERS":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ADD CARD":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "MONSTER STAT MODIFIERS":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ALLOW ACTIVATIONS":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ALLOW FACE UP IN DECK":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ALLOW MULTIPLE SUMMONS":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ALTER SUMMON CONDITION":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "APPLY EFFECT WHEN":
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "APPLY EFFECT IF":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ATTACH XYZ MATERIAL":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "BATTLE RELATED":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "BANISH SHIFTS LOCATION":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "BANISH":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "BANISH FUSION MATERIALS":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "BANISH FOR COST":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "BANISH FOR RITUAL SUMMON":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "BANISH NEGATED":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "EXTERNAL SPECIAL SUMMON":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ACTIVATED BY EITHER PLAYER":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "QUICK EFFECT":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "EXTERNAL REVIVE":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "ALTERNATIVE FUSION SUMMON POSSIBLE":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "EASIER RITUAL SUMMON":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "RESTRICTION TYPE":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "CHAIN EFFECT":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         elif key == "NORMAL":  #
+#             loop_entries(key)
+#             print(f"{key} is done, going onto the next step")
+#         else:
+#             print(f"the key: {key} did not fit into any of the categories")
+#     import_success = True
+#     return import_success

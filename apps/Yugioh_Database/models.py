@@ -3,7 +3,6 @@ from apps.Yugioh_Database.enums import (
     CardTypeOptions,
     MonsterAttributeOptions,
     MonsterTypeOptions,
-    MonsterCardTypeOptions,
     SpellCardTypeOptions,
     TrapCardTypeOptions,
     EffectTypeOptions,
@@ -112,22 +111,22 @@ class Card(Card_Description):
         verbose_name_plural = "Cards"
 
 
+class MonsterCardType(models.Model):
+    type: str = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.type
+
+
 class Monster_Card(Card):
-    card_id = models.ForeignKey(
-        Card, related_name="Monster_Card", on_delete=models.CASCADE
-    )
     card_name = Card.name
-    archetypes = Card.archetypes
-    card_type = Card.card_type
     attribute = models.CharField(
         max_length=50,
         choices=MonsterAttributeOptions.options(),
         default=MonsterAttributeOptions.default(),
     )
-    monster_card_type = models.CharField(
-        max_length=100,
-        choices=MonsterCardTypeOptions.options(),
-        default=MonsterCardTypeOptions.default(),
+    monster_card_type = models.ManyToManyField(
+        MonsterCardType,
     )
     monster_type = models.CharField(
         max_length=50,
@@ -143,10 +142,10 @@ class Monster_Card(Card):
     link_rating = models.PositiveSmallIntegerField(
         default=0, validators=[maximum_link_rating]
     )
-    attack = models.PositiveSmallIntegerField(
+    attack = models.SmallIntegerField(
         default=0, validators=[maximum_battle_value]
     )
-    defense = models.PositiveSmallIntegerField(
+    defense = models.SmallIntegerField(
         default=0, validators=[maximum_battle_value]
     )
 
@@ -159,12 +158,7 @@ class Monster_Card(Card):
 
 
 class Spell_Card(Card):
-    card_id = models.ForeignKey(
-        Card, related_name="Spell_Card", on_delete=models.CASCADE
-    )
-    card_name = models.CharField(max_length=100)
-    archetypes = Card.archetypes
-    card_type = Card.card_type
+    card_name = Card.name
     type = models.CharField(
         max_length=50,
         choices=SpellCardTypeOptions.options(),
@@ -180,12 +174,7 @@ class Spell_Card(Card):
 
 
 class Trap_Card(Card):
-    card_id = models.ForeignKey(
-        Card, related_name="Trap_Card", on_delete=models.CASCADE
-    )
-    card_name = models.CharField(max_length=100)
-    archetypes = Card.archetypes
-    card_type = Card.card_type
+    card_name = Card.name
     type = models.CharField(
         max_length=50,
         choices=TrapCardTypeOptions.options(),

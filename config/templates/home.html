@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>All Cards</title>
+</head>
+<body>
+    <h1>Here are all the available cards</h1>
+    <div class="container">
+        <!-- creates a dynamic block called body_items other templates can include this file or expand it, -->
+        <!-- to fill body_items with different values -->
+        {% block body_items %} 
+        <!-- the part below will be pushed to a different template-->
+        {% for card in cards_from_db %} <!--the key you grab needs to be referenced in the data thats passed into render inside the views file-->
+            <p>{{card.name}}</p>
+        {% endfor %}
+        {% endblock %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

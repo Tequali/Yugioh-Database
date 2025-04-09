@@ -2,6 +2,7 @@ from django.contrib import admin
 from apps.Yugioh_Database import models
 
 
+# region custom_action
 @admin.action(description="Set Effect Category to ALTER SUMMON CONDITION")
 def set_effect_category_to_allow_face_up_in_deck(modeladmin, request, queryset):
     queryset.update(effect_category=31)
@@ -149,6 +150,9 @@ def set_effect_category_to_activated_by_either_player(modeladmin, request, query
     queryset.update(effect_category=3)
 
 
+# endregion
+
+
 class ArchetypeFilter(admin.SimpleListFilter):
     # create filter
     title = "Archetype"
@@ -216,6 +220,28 @@ class ArchetypeDashboardAdmin(admin.ModelAdmin):
     ordering = ("archetype_name",)
 
 
+class MonsterCardAdmin(admin.ModelAdmin):
+    # purely visual
+    ordering = ("name",)
+    list_display = ("name",)
+
+    # to search for strings, it needs to be the original name of the field
+    # contained in the highest instance of inheritance
+    # while any FK field needs to be searched by table_name__field_name
+    search_fields = (
+        "name",
+        "description",
+        "archetypes__archetype_name",
+    )
+
+    filter_horizontal = (
+        "effects",
+        "precise_effects",
+        "archetypes",
+        "monster_card_type",
+    )
+
+
 class EffectDashboardAdmin(admin.ModelAdmin):
     # purely visual
     list_filter = ("effect_category",)
@@ -256,9 +282,6 @@ class EffectDashboardAdmin(admin.ModelAdmin):
     ]
 
 
-admin.site.register(models.Archetype, ArchetypeDashboardAdmin)
-
-
 class CardDescriptionAdmin(admin.ModelAdmin):
     # purely visual
 
@@ -266,9 +289,6 @@ class CardDescriptionAdmin(admin.ModelAdmin):
         "effects",
         "precise_effects",
     )
-
-
-admin.site.register(models.Card_Description, CardDescriptionAdmin)
 
 
 class CardAdmin(admin.ModelAdmin):
@@ -279,14 +299,14 @@ class CardAdmin(admin.ModelAdmin):
         "precise_effects",
         "archetypes",
     )
+    # search_fields = ("name",)
 
 
 admin.site.register(models.Card, CardAdmin)
-# Register your models here.
-admin.site.register(
-    models.Effect,
-)
-admin.site.register(models.Precise_Effect, EffectDashboardAdmin)
-admin.site.register(models.Monster_Card, CardAdmin)
+# admin.site.register(models.Effect)
+# admin.site.register(models.Precise_Effect, EffectDashboardAdmin)
+admin.site.register(models.Archetype, ArchetypeDashboardAdmin)
+admin.site.register(models.MonsterCardType)
+admin.site.register(models.Monster_Card, MonsterCardAdmin)
 admin.site.register(models.Spell_Card, CardAdmin)
 admin.site.register(models.Trap_Card, CardAdmin)
