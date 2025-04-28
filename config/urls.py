@@ -22,4 +22,5 @@ from apps.Yugioh_Database import views
 urlpatterns = [
     path("admin/", admin.site.urls, name="admin"),
     path("home/", views.HomeView.as_view(), name="home"),
+    path("", views.redirect_home, name="redirect_home"),
 ]

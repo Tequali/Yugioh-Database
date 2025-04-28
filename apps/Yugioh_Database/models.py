@@ -119,7 +119,6 @@ class MonsterCardType(models.Model):
 
 
 class Monster_Card(Card):
-    card_name = Card.name
     attribute = models.CharField(
         max_length=50,
         choices=MonsterAttributeOptions.options(),
@@ -150,7 +149,7 @@ class Monster_Card(Card):
     )
 
     def __str__(self):
-        return self.card_name
+        return self.name
 
     class Meta:
         verbose_name = "Monster Card"

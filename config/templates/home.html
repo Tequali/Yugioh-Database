@@ -15,8 +15,17 @@
         <!-- to fill body_items with different values -->
         {% block body_items %} 
         <!-- the part below will be pushed to a different template-->
-        {% for card in cards_from_db %} <!--the key you grab needs to be referenced in the data thats passed into render inside the views file-->
-            <p>{{card.name}}</p>
+        {% for card in all_cards_from_db %} <!--the key you grab needs to be referenced in the data thats passed into render inside the views file-->
+            <p>
+            {{ card.name }} is a {{ card.card_type }}
+            {% if card.card_type|lower == "monster" %}
+                {% if card.attack != None and card.defense != None %}
+                    with the following stats: {{ card.attack }}/{{ card.defense }}
+                {% else %}
+                    with no stats listed
+                {% endif %}
+            {% endif %}
+            </p>
         {% endfor %}
         {% endblock %}
     </div>
