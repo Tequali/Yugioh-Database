@@ -166,6 +166,7 @@ class TrapCardTypeOptions(Options):
 
 
 class EffectTypeOptions(Options):
+    destroy = "DESTROY"
     activation_condition = "ACTIVATION CONDITION"
     activation_upon = "ACTIVATION UPON"
     activation_when = "ACTIVATION WHEN"
@@ -199,6 +200,7 @@ class EffectTypeOptions(Options):
     @classmethod
     def options(cls):
         return [
+            (cls.destroy, "DESTROY"),
             (cls.activation_condition, "ACTIVATION CONDITION"),
             (cls.activation_upon, "ACTIVATION UPON"),
             (cls.activation_when, "ACTIVATION WHEN"),

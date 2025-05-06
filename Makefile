@@ -30,3 +30,6 @@ dev-shell:
 
 dev-test:
 	python manage.py test $(route) --settings=config.settings.dev
+
+dev-dumpdata:
+	python manage.py dumpdata -a --settings=config.settings.dev --indent=4 > data.json
